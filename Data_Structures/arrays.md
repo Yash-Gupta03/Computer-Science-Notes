@@ -318,7 +318,7 @@ var intersect = function(nums1, nums2) {
 
 7. Plus one 
 ```python
-ef plusOne(self, digits: List[int]) -> List[int]:
+def plusOne(self, digits: List[int]) -> List[int]:
         ans = []
         carry = 1
         i = len(digits)-1
@@ -337,7 +337,69 @@ ef plusOne(self, digits: List[int]) -> List[int]:
         return ans
 ```
 
-8. 
+8. move zeros to the end
+```js
+var moveZeroes = function(nums) {
+    let slow = 0
+    for (let fast = 0; fast < nums.length; fast++){
+        if (nums[fast] != 0 && nums[slow] == 0){
+            let temp = nums[fast];
+            nums[fast] = nums[slow];
+            nums[slow] = temp;
+        }
+        if (nums[slow] != 0){ 
+            slow++;
+        }
+    }
+};
+```
+
+9. Two Sum
+```js
+var twoSum = function(nums, target) {
+    let d = {};
+    let diff = 0;
+    for (let i = 0; i < nums.length; i++) {
+        diff = target - nums[i];
+        if (diff in d) return [d[diff], i];
+        else{
+            d[nums[i]] = i;
+        }
+    }
+};
+```
+
+10. Valid Sudoku
+```js
+```
+
+11. Rotate Image
+```js
+var rotate = function(matrix) {
+    let temp = 0
+    let temparr = []
+    let i = 0;
+    let j = matrix.length-1;
+    
+    while (i < j) {
+        temparr = matrix[i];
+        matrix[i] = matrix[j];
+        matrix[j] = temparr;
+        i++;
+        j--;
+    }
+    
+    for (i = 0; i < matrix.length; i++) {
+        for ( let j = 0; j < i; j++) {
+            temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+};
+```
+
+
 
 
 
