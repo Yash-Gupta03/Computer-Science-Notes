@@ -121,3 +121,14 @@ select distinct salary from tablename orderBy salary desc limit 1 offset 2;
 
 alter table tablename add primary key (column_name);
 
+### 30. What is foreign key ?
+
+It is a field in one table which is the primary key in another table, to maintain referential integrity.
+
+### 31. How to declare foreign key ?
+
+alter table tablename add foreign key (columnName) references tablename(primarykey)
+
+
+
+### 32. 
