@@ -131,4 +131,40 @@ alter table tablename add foreign key (columnName) references tablename(primaryk
 
 
 
-### 32. 
+### 32. What is an entity ?
+
+Entity represents a real world object.
+
+Weak entity means that does not have its own primary key.
+
+Tangible entities means which exists physically like cars and books.
+
+Non-tangible that does not exist physically like social media accounts.
+
+
+### 33. What is an Attribute ?
+
+Properties or characteristics of an entity are attributes.
+
+Types - 
+
+Key Attribute - That can uniquely identify a tuple.(id)
+
+Composite Attribute - That is composed of many other attributes.(address)
+
+Multivalued Attribute - That can have multiple values.(phone number)
+
+Derived Attribute - Attribute that can be derived from other attributes.(age)
+
+
+## Association in DBMS ?
+
+It describes relationship between two objects.
+
+### Aggregate functions in DBMS ?
+
+count, sum, min, max, avg
+
+### What is uuid ?
+
+It is a universal unique identifier.
