@@ -51,6 +51,7 @@
 </form>
 ```
 
+
 # Javascript
 
 ## Basics of Array
@@ -171,13 +172,117 @@ reducedNumbers = numbers.reduce((sum, x)=>{
 
 ## Basics of Strings
 
+```js
+let s = 'Yash Gupta'
+```
+
+### String Methods
+```js
+let length = s.length;
+
+let part = s.slice(0, 5)
+
+let part2 = s.substring(0,5) //No negative index
+
+let part3 = s.substr(0, 5)  //5 represents length of string
+
+let newS = s.replace('a', 'x');
+
+let newS = s.replaceAll('a', 'x');
+
+let s1 = s.toUpperCase();
+
+let s2 = s.toLowerCase();
+
+let newWord = s.concat(' 24');
+
+let trimedS = s.trim();
+
+let trimedStart = s.trimStart();
+
+let trimedEnd = s.trimEnd();
+
+let c = s.charAt(0);
+
+let arr = s.split('');
+```
+
+
 
 
 ## Objects
+
+```js
+const yash = {
+    nature: 'hardworking',
+    dreams: 'big',
+    hobby: 'to help others',
+    printDetails: ()=>{
+        console.log(`${this.nature}, ${this.dreams}`)
+    }
+}
+
+console.log(yash.dreams);
+
+console.log(yash['dreams']);
+
+yash.printDetails()
+```
+
+
 ### Destructuring
 
+1. Arrays - <br>
+```js
+let arr = [1,2,3,4,5];
+
+let a, b = arr;
+
+console.log(a, b);
+```
+2. Objects - <br>
+```js
+let obj = {name:'Yash'}
+
+let {name} = obj
+```
+
+3. Rest Operator - <br>
+```js
+function add(...args){
+    let sum = 0
+    for (i of args){
+        sum+=i
+    }
+    return sum;
+}
+console.log(add(1,2,3,4,5,6,7,8,9,10))
+```
+
+4. Spread Operator - <br>
+```js
+
+let a1 = [1,2,3];
+let a2 = [4,5,6];
+let a3 = [...a1, ...a2];
+```
 
 ## Functions
+
+1. Function Declaration
+```js
+function details(){
+    let name = "Yash";
+}
+```
+
+2. Function Expression
+```js
+let details = function(){
+    let name = "Yash";
+}
+
+```
 
 ### Functional Constructor
 
