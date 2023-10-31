@@ -157,14 +157,62 @@ Multivalued Attribute - That can have multiple values.(phone number)
 Derived Attribute - Attribute that can be derived from other attributes.(age)
 
 
-## Association in DBMS ?
+### 34. Association in DBMS ?
 
 It describes relationship between two objects.
 
-### Aggregate functions in DBMS ?
+### 35. Aggregate functions in DBMS ?
 
 count, sum, min, max, avg
 
-### What is uuid ?
+### 36. What is uuid ?
 
 It is a universal unique identifier.
+
+
+
+## HackerRank SQL Practice Questions
+
+### Basic Select
+```sql
+select * from tablename where (condition1 and condition2);
+
+Remember to use only single equal instead of double equal to compare.
+/*
+Query -
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*/
+
+SELECT DISTINCT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY), CITY LIMIT 1;
+
+SELECT DISTINCT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1;
+
+
+/*
+Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+*/
+SELECT CITY FROM STATION WHERE LEFT(CITY, 1) IN ('a','e','i','o','u');
+
+-- Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY, 1) NOT IN ('A','E','I','O','U');
+
+
+-- Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+
+-- Equilateral: It's a triangle with  sides of equal length.
+-- Isosceles: It's a triangle with  sides of equal length.
+-- Scalene: It's a triangle with  sides of differing lengths.
+-- Not A Triangle: The given values of A, B, and C don't form a triangle.
+
+
+SELECT 
+    CASE
+        WHEN A+B>C AND A+C>B AND B+C>A THEN
+            CASE
+                WHEN A=B AND B=C THEN 'Equilateral'
+                WHEN A=B OR B=C OR A=C THEN 'Isosceles'
+                ELSE 'Scalene'
+            END
+        ELSE 'Not A Triangle'
+    END
+FROM TRIANGLES
