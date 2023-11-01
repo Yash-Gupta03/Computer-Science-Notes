@@ -173,38 +173,27 @@ It is a universal unique identifier.
 
 ## HackerRank SQL Practice Questions
 
-### Basic Select
+### 1. Basic Select Queries
 ```sql
 select * from tablename where (condition1 and condition2);
+```
 
-Remember to use only single equal instead of double equal to compare.
-/*
-Query -
-Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.*/
+### 2. Use of limit clause
+```sql
 
 SELECT DISTINCT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY), CITY LIMIT 1;
+```
 
-SELECT DISTINCT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1;
+### 3. Use of left clause
 
-
-/*
-Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
-*/
+```sql
 SELECT CITY FROM STATION WHERE LEFT(CITY, 1) IN ('a','e','i','o','u');
 
--- Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
-
 SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY, 1) NOT IN ('A','E','I','O','U');
+```
 
-
--- Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
-
--- Equilateral: It's a triangle with  sides of equal length.
--- Isosceles: It's a triangle with  sides of equal length.
--- Scalene: It's a triangle with  sides of differing lengths.
--- Not A Triangle: The given values of A, B, and C don't form a triangle.
-
-
+### 4. Use of case when then 
+```sql
 SELECT 
     CASE
         WHEN A+B>C AND A+C>B AND B+C>A THEN
@@ -216,3 +205,46 @@ SELECT
         ELSE 'Not A Triangle'
     END
 FROM TRIANGLES
+```
+
+### 5. Use of concat
+
+```sql
+SELECT CONCAT(NAME,'(', LEFT(OCCUPATION, 1),')') FROM OCCUPATIONS ORDER BY NAME;
+
+SELECT CONCAT('There are a total of ', COUNT(OCCUPATION), ' ', lower(OCCUPATION), 's.') FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY count(OCCUPATION),OCCUPATION;
+```
+
+### 6. Case when then
+```
+SELECT N,
+    CASE
+        WHEN P IS NULL THEN 'Root'
+        WHEN (N IN (SELECT P FROM BST)) THEN 'Inner'
+        ELSE 'Leaf'
+    END
+FROM BST ORDER BY N
+```
+
+### 7.  AGGREGATE FUNCTION - 
+> COUNT(), SUM(), AVG(), 
+1.  To round off a number 
+```sql
+SELECT ROUND(AVG(POPULATION)) FROM CITY  
+```
+
+2. Using Replace
+```
+SELECT CEIL(AVG(SALARY)-AVG(REPLACE(SALARY, 0, ''))) FROM EMPLOYEES;
+```
+
+3. using groupby and orderby
+```sql
+SELECT MAX(MONTHS*SALARY), COUNT(*) FROM EMPLOYEE WHERE MONTHS*SALARY= (SELECT MAX(SALARY*MONTHS) FROM EMPLOYEE);
+-- OR
+SELECT MONTHS*SALARY AS TOTAL, COUNT(*) FROM EMPLOYEE GROUP BY TOTAL ORDER BY TOTAL DESC LIMIT 1
+```
+
+SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2) FROM STATION;
+```
+
