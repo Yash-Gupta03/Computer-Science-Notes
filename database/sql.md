@@ -169,6 +169,12 @@ count, sum, min, max, avg
 
 It is a universal unique identifier.
 
+### 37. What is the difference between delete, truncate and drop command ?
+
+With delete command, we can set some filters with where clause for what records to delete, we can also restore the records back with rollback command<br>
+With drop command, we drop the entire table from the database and all the data inside it.<br>
+With truncate, we erase the entire table's data, it is faster than drop and delete and we can restore back it's data.
+
 
 
 ## HackerRank SQL Practice Questions
