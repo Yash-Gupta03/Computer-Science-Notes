@@ -1,6 +1,56 @@
+### 1. Sum of diagonal elements
+
+left diagonal - i == j
+right diagonal - i+j == len(matrix)[number of rows]
 
 
+### 2. Rounding off to 6 decimal places
 
+```python
+"{:.6f}".format(pos/len(arr))
+```
+
+### 3. Pyramid Questions
+
+### 4. Time Conversion
+
+```python
+def timeConversion(s):
+    # Write your code here
+    if s[-2] == 'P':
+        hr = int(s[0:2])
+        if hr == 12:
+            return s[0:8]
+        else:
+            hr+=12
+            s = str(hr)+s[2:8]
+            return s
+    else:
+        hr = int(s[0:2])
+        if hr == 12:
+            hr = 0
+            hr = str(hr)
+            hr+='0'
+            s=hr+s[2:8]
+            print(s)
+            return s[0:8]
+            
+        else:
+            return s[0:8]
+```
+
+### 5. Kangaroo jump meet
+
+```python
+def kangaroo(x1, v1, x2, v2):   
+    if v1 > v2:
+        if (x2-x1) % (v1-v2)==0:
+            return 'YES'
+    
+    return 'NO'
+```
+
+### 6. 
 
 
 
