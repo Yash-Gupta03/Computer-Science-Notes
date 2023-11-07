@@ -50,7 +50,25 @@ def kangaroo(x1, v1, x2, v2):
     return 'NO'
 ```
 
-### 6. 
+### 6. Breaking Records
+
+```python
+def breakingRecords(scores):
+    high = 0
+    low = 0
+    high_num = low_num = scores[0]
+    for i in scores:
+        if i > high_num:
+            high+=1
+            high_num = i
+        
+        if i < low_num:
+            low+=1
+            low_num = i
+    
+    return [high, low]
+
+```
 
 
 
