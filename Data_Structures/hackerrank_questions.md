@@ -70,6 +70,27 @@ def breakingRecords(scores):
 
 ```
 
+### 7. Check Subarray sum in array
+
+```python
+def birthday(s, d, m):
+    # Write your code here
+    count = 0
+    for i in range(0, len(s)):
+        j = i
+        date = 0
+        x = j+m
+        if x <= len(s):
+            while j < x:
+                date += s[j]
+                j+=1
+            # print(date)
+            if date == d:
+                count+=1
+    return count
+```
+
+
 
 
 
