@@ -89,6 +89,100 @@ def birthday(s, d, m):
                 count+=1
     return count
 ```
+### 8. Divisible sum pair
+
+```python
+def divisibleSumPairs(n, k, ar):
+    # Write your code here
+    count = 0
+    for i in range(0, n):
+        # j = i+1
+        for j in range(i+1, n):
+            if (ar[i]+ar[j]) % k == 0:
+                count+=1
+    
+    return count
+```
+
+### 9. Between two sets
+
+```python
+def getTotalX(a, b):
+    # Write your code here
+    x = max(a)
+    y = min(b)
+    count = 0
+    for i in range(x, y+1):
+        flag = 0
+        flag2 = 0
+        for j in a:
+            if i % j != 0:
+                flag = 1
+                break
+        
+        if flag == 0:
+            for j in b:
+                if j % i != 0:
+                    flag2 = 1
+                    break
+        
+        if flag2 == 0 and flag == 0:
+            count+=1
+    
+    return count
+```
+
+### 10. Find most frequent element in array
+
+```python 
+def migratoryBirds(arr):
+    # Write your code here
+    arr.sort()
+    counter = 0
+    max_count = 0
+    bird = 0
+    for i in range(1, len(arr)):
+        counter = counter+1 if arr[i] == arr[i-1] else 0
+        if counter > max_count:
+            bird = arr[i-1]
+            max_count = counter
+    
+    return bird
+```
+
+### 11. Programmer's Day
+
+```python
+def dayOfProgrammer(year):
+    # Write your code here
+    if year == 1918:
+        return '26.09.1918'
+    elif (year <= 1917 and year % 4 == 0) or (year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)):
+        return '12.09.%s' %year
+    
+    else:
+        return '13.09.%s' %year
+
+```
+
+### 12. Bill Split
+
+```python
+def bonAppetit(bill, k, b):
+    # Write your code here
+    total = 0
+    for i in bill:
+        total += i
+    
+    total -= bill[k]
+    
+    actual = total // 2 
+    if actual == b:
+        print('Bon Appetit')
+    else:
+        print(b - actual)
+```
+
 
 
 
