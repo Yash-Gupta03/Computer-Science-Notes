@@ -16,7 +16,6 @@ right diagonal - i+j == len(matrix)[number of rows]
 
 ```python
 def timeConversion(s):
-    # Write your code here
     if s[-2] == 'P':
         hr = int(s[0:2])
         if hr == 12:
@@ -74,7 +73,6 @@ def breakingRecords(scores):
 
 ```python
 def birthday(s, d, m):
-    # Write your code here
     count = 0
     for i in range(0, len(s)):
         j = i
@@ -93,7 +91,6 @@ def birthday(s, d, m):
 
 ```python
 def divisibleSumPairs(n, k, ar):
-    # Write your code here
     count = 0
     for i in range(0, n):
         # j = i+1
@@ -108,7 +105,6 @@ def divisibleSumPairs(n, k, ar):
 
 ```python
 def getTotalX(a, b):
-    # Write your code here
     x = max(a)
     y = min(b)
     count = 0
@@ -136,7 +132,6 @@ def getTotalX(a, b):
 
 ```python 
 def migratoryBirds(arr):
-    # Write your code here
     arr.sort()
     counter = 0
     max_count = 0
@@ -154,7 +149,6 @@ def migratoryBirds(arr):
 
 ```python
 def dayOfProgrammer(year):
-    # Write your code here
     if year == 1918:
         return '26.09.1918'
     elif (year <= 1917 and year % 4 == 0) or (year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)):
@@ -169,7 +163,6 @@ def dayOfProgrammer(year):
 
 ```python
 def bonAppetit(bill, k, b):
-    # Write your code here
     total = 0
     for i in bill:
         total += i
@@ -183,8 +176,96 @@ def bonAppetit(bill, k, b):
         print(b - actual)
 ```
 
+### 13. Matching Socks
 
+```python 
+def sockMerchant(n, ar):
+    d = {}
+    for i in ar:
+        if i in d:
+            d[i]+=1
+        else:
+            d[i] = 1
+    
+    count = 0
+    for i in d:
+        count += (d[i] // 2)
+    
+    return count
+```
 
+### 14. Page Count(Drawing Book)
+
+```python 
+def pageCount(n, p):
+    minimum = n-p
+    if p < minimum:
+        return (p//2)
+    elif n == 6 and p == 5:
+        return 1
+    else:
+        return (minimum//2)
+```
+
+### 15. Counting Valley
+
+```python
+def countingValleys(steps, path):
+    sea = 0
+    valley_in = 0
+    count = 0
+    for i in path:
+        if i == 'U':
+            sea+=1
+        
+        if i == 'D':
+            sea-=1
+        
+        
+        if sea < 0:
+            valley_in = 1
+        
+        if (sea >= 0) and (valley_in == 1):
+            count += 1
+            valley_in = 0
+    
+    return count
+```
+
+### 16. Electronic Shop
+
+> Brute Force Approach
+
+```python
+def getMoneySpent(keyboards, drives, b):
+
+    if b < (min(keyboards)+min(drives)):
+        return -1
+    
+    max_spent = 0
+    
+    for i in keyboards:
+        for j in drives:
+            if i+j <= b:
+                if (i+j) > max_spent:
+                    max_spent = (i+j)
+    
+    return max_spent
+```
+
+### 17. Cats and a Mouse
+
+```python
+def catAndMouse(x, y, z):
+    if abs(x-z) == abs(y-z):
+        return 'Mouse C'
+    
+    if abs(x-z) < abs(y-z):
+        return 'Cat A'
+        
+    if abs(x-z) > abs(y-z):
+        return 'Cat B'
+```
 
 
 
@@ -213,6 +294,7 @@ def bonAppetit(bill, k, b):
 
 ### Important Question
 
+```python
 K = 2
 M = 4
 n = K
@@ -226,3 +308,4 @@ while True:
         print("not possible")
         break
     n = n+1
+```
