@@ -267,7 +267,103 @@ def catAndMouse(x, y, z):
         return 'Cat B'
 ```
 
+### 18. Picking Numbers
 
+```python
+def pickingNumbers(a):
+    # Write your code here
+    maxlen = 0
+    for i in a:
+        x = a.count(i)
+        y = a.count(i-1)
+        z = x+y
+        if z > maxlen:
+            maxlen = z
+    
+    return maxlen
+```
+
+### 19. Designer PDF
+
+```python
+def designerPdfViewer(h, word):
+    # Write your code here
+    l = ['a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y','z']
+    maxval = 0
+    for i in word:
+        x = l.index(i)
+        maxval = max(maxval, h[x])
+    return maxval*len(word)
+```
+
+### 20. Hurdle Race
+
+```python
+def hurdleRace(k, height):
+    # Write your code here
+    diff = max(height)-k
+    if k >= max(height):
+        return 0
+    else:
+        return diff
+```
+
+### 21. Utopian Tree
+
+```python
+def utopianTree(n):
+    # Write your code here
+    h = 1
+    w = 'sp'
+    for i in range(0, n):
+        if w == 'sp':
+            h*=2
+            w = 's'
+        else:
+            h+=1
+            w = 'sp'
+    
+    return h
+
+```
+
+
+### 23. Angry Professor
+
+```python
+def angryProfessor(k, a):
+    # Write your code here
+    count = 0
+    for i in a:
+        if i <= 0:
+            count += 1
+    
+    if count < k:
+        return 'YES'
+    else:
+        return 'NO'
+```
+
+### 24. Beautiful Days
+
+```python
+def beautifulDays(i, j, k):
+    # Write your code here
+    count = 0
+    for x in range(i, j+1):
+        reverse = 0
+        z = x
+        while x:
+            num=(x % 10)
+            reverse *= 10
+            reverse += num
+            x = x//10
+        # print(reverse, x-reverse)
+        if ((z-reverse) % k == 0):
+            count+=1
+    
+    return count
+```
 
 
 
