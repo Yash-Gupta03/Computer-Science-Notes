@@ -366,8 +366,33 @@ def beautifulDays(i, j, k):
 ```
 
 
+### 25. Viral Ads
 
+```python
+def viralAdvertising(n):
+    total = 0
+    shared = 5
+    liked = 0
+    for i in range(0, n):
+        liked = shared//2
+        total += liked
+        shared = liked*3
+    
+    return total
+```
 
+### 26. Save the prisoner
+
+```python
+def saveThePrisoner(n, m, s):
+    # Write your code here
+    seat = (m + s - 1) % n
+
+    if (seat == 0):
+        return n
+    else:
+        return seat
+```
 
 
 
