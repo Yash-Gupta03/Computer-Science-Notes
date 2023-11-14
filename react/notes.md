@@ -85,7 +85,43 @@ Custom made components have their first case as upper case whereas normal html e
 As JSX has both html and javascript, javascript has class as a reserved keyword thus we use className.
 
 
-### 9. 
+### 9. What are props in react ?
+
+Like we use parameters and arguments in functions, we use props to transfer data from one component to another.
+
+### 10. What is props.children ?
+
+The value of props.children will be all content between opening and closing custom component. It is used when we create a wrapper component.
+
+> Instead of div, we can create our own custom wrapper component with our own styling.
+
+
+### 11. How event listeners are used in React ?
+
+```js 
+<button onClick={deleteExpense}>Delete</button>
+```
+
+### 12. How react components are executed (rendered) ?
+
+All the components are functions only, and initially when the application starts all the component (functions) are executed in the beginning and later whenevere we change any value of variable, the functions are not again executed, thus value og title does not change.
+
+### 13. What is useState ?
+
+With the help of useState, we can change the values in component and rerender them so that the user interface can become interactive and can respond to changes.
+
+### 14. Syntax of useState ?
+
+```js
+import {useState} from 'react';
+
+const [amount, setAmount] = useState(props.amount);
+
+const ExpenseAmount = () => {
+        setAmount(5000);
+    }
+```
+
 
 
 
