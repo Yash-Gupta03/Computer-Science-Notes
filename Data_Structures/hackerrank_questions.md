@@ -394,6 +394,35 @@ def saveThePrisoner(n, m, s):
         return seat
 ```
 
+### 27. Circular Array Rotation
+
+```python
+def circularArrayRotation(a, k, queries):
+    # Write your code here
+    while k:
+        x = a.pop()
+        a.insert(0, x)
+        k-=1
+    
+    y = []
+    for i in queries:
+        y.append(a[i])
+    
+    return y
+```
+
+### 28. Sequence Equation
+
+```python
+def permutationEquation(p):
+    # Write your code here
+    res = []
+    for i in range(1, len(p)+1):
+        res.append(p.index(p.index(i)+1)+1)
+    
+    return res
+```
+
 
 
 
