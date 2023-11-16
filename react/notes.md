@@ -122,6 +122,37 @@ const ExpenseAmount = () => {
     }
 ```
 
+### 15. Can we use single state or multiple states ?
+
+Both the scenarios are valid, when we use multiple states it looks like
+```js
+const [title, enteredTitle] = useState('')
+    const [date, enteredDate] = useState('')
+    const [amount, enteredAmount] = useState('')
+
+    const titleHandler = (event) => {
+        console.log(event.target.value);
+        enteredTitle(event.target.value);
+    }
+
+    const amountHandler = (event) => {
+        console.log(event.target.value);
+        enteredAmount(event.target.value);
+    }
+```
+
+and when we use single state, it changes to be like
+> Use a function within updatedValues because when our new state depends on our prevSatate, state updation is an asyn operation and by using a function, react ensures prevState values are always in sync.
+```js
+const [values, updatedValues] = useState({title:'', date:'', amount: ''})
+
+const titleHandler = (event) => {
+        updatedValues((prevState)=>{
+            return ({...prevSatate, title: event.target.value })
+        });
+    }
+```
+
 
 
 
