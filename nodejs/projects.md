@@ -17,4 +17,27 @@ Expense - Id, price, description, category
 ForgotPassword - uuid, userId, isActive
 
 
+## Flow of the Project 
 
+### 1. Flow
+
+> Execution starts with app.js
+
+> app.js refers to different routes.
+
+
+## Important questions
+
+### 1. body parser
+
+### 2. cors
+
+### 3. dotenv
+
+### 4. app.use(express.static("public"));
+
+### 5. What is sequelize ?
+
+### 6. Morgan and Helmet ?
+
+### 7. express.Router();
