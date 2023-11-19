@@ -28,7 +28,8 @@ ForgotPassword - uuid, userId, isActive
 
 ## Important questions
 
-### 1. body parser
+### 1. body parser -
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. 
 
 ### 2. cors
 
