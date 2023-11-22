@@ -43,3 +43,37 @@ Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allo
 ### 6. Morgan and Helmet ?
 
 ### 7. express.Router();
+
+
+
+
+# Group Chat Application
+
+## Websockets
+
+> It is a bidirectional full duplex protocol for communication between client and server
+
+> Uses - Chatting, notification, live feed, multiplayer gaming, show client progrss.
+
+
+### What was before websockets, why need websockets ?
+
+Http protocol is used to transfer data between client and server. Client opens a tcp connection, sends request to the server, and server responds to all the requests of client and then the connection is closed.
+
+> Http connection is stateless.
+
+Websockets were introduced for bidirectional communication which Http could not provide, first there is a ws handshake between client and server (the client sends http request with a special 'upgrade' header, and in response the server sends response with switched protocol) and then the communication starts.
+
+> It is a stateful connection because the client and server knows each other.
+(horizontal scaling is difficult in stateful connection because the server is connected to the clients, once server closed, all clients dead.)
+
+
+
+
+> More project idea for backend development - 
+ - real time communication
+ - npm package
+ - CLI tool
+ - clone website
+
+
