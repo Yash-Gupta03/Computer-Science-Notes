@@ -236,7 +236,7 @@ yash.printDetails()
 ```js
 let arr = [1,2,3,4,5];
 
-let a, b = arr;
+let [a, b] = arr;
 
 console.log(a, b);
 ```
@@ -286,10 +286,23 @@ let details = function(){
 
 ### Functional Constructor
 
+```js
+function Properties(type, length, age){
+    this.type = type;
+    this.length = length;
+    this.age = age
+}
+
+const tree1 = new Properties('mango', 50, 200)
+
+console.log(tree1.age)
+```
+
 
 
 
 ## ES6 Classes
+
 
 ### Static Variables
 
