@@ -153,6 +153,13 @@ const titleHandler = (event) => {
     }
 ```
 
+### 16. How child to parent component communication work ?
+
+The parent passes function as an attribute along with the component and the child calls the function along with the data to be passed as a parameter, the function gets executed in the parent component and it collects the data from the parameter within the function.
+
+
+
+
 
 
 
