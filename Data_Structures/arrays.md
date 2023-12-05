@@ -394,3 +394,9 @@ print(arr)
    1. Using extra space
    2. Using 2 pointers
    3. Binary Search
+
+### Medium leetcode questions
+
+1. three-sum ------- two pointer approach
+2. container with most water -------- two pointer
+3. search in rotated sorted array --------
