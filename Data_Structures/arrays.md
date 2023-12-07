@@ -399,4 +399,7 @@ print(arr)
 
 1. three-sum ------- two pointer approach
 2. container with most water -------- two pointer
-3. search in rotated sorted array --------
+3. search in rotated sorted array -------- Binary Search
+4. Largest odd number in string -------- Traverse right to left
+5. 4Sum2 ------- Club big problem into small problem
+6. Shuffle ---------- simple traversal
