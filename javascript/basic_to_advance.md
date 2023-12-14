@@ -82,6 +82,13 @@ for (i of names) {
 ```
 
 ```js
+let names = ["yash", "sourabh", "shivam", "durgesh"];
+for (i in names) {
+  console.log(names[i]);
+}
+```
+
+```js
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }
@@ -305,9 +312,30 @@ console.log(tree1.age);
 
 ## ES6 Classes
 
+```js
+class Robot {
+  name = "Yash";
+  constructor(color = "blue") {
+    this.color = color;
+    this.shape = "circle";
+  }
+  feature() {
+    console.log(
+      `The robot can walk, its color is ${this.color}, name is ${this.name}`
+    );
+  }
+}
+
+let r1 = new Robot("white");
+
+r1.feature();
+```
+
 ### Static Variables
 
 ### Inheritance
+
+> Diamond problem in javascript
 
 ## Window Object and Events
 
@@ -319,7 +347,7 @@ console.log(tree1.age);
 
 # Advance JavaScript
 
-### Execution COntext -
+### Execution Context -
 
 Everything in js happens inside exection context, there are two phases in the creation of execution context, first is memory allocation phase which allocates memory to variables and functions and and second is code execution phase where the code is executed line by line.
 
@@ -327,7 +355,7 @@ Everything in js happens inside exection context, there are two phases in the cr
 
 It is a phenomenon in which we can access variables and functions before we have initialized them.
 
-### CAll Stack -
+### Call Stack -
 
 It maintains order of execution of execution context.
 
@@ -392,3 +420,13 @@ function x() {
 res = x();
 res();
 ```
+
+### Callbacks
+
+### Async JS and Event Loop
+
+### DOM Manipulation
+
+### Promises
+
+### Axios
